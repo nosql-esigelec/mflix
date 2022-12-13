@@ -1,0 +1,124 @@
+{
+  "tests": [
+    {
+      "name": "connection",
+      "setup": "",
+      "run": "pytest -m connection",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "connection_pooling",
+      "setup": "",
+      "run": "pytest -m connection_pooling",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "create_update_comments",
+      "setup": "",
+      "run": "pytest -m create_update_comments",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "delete_comments",
+      "setup": "",
+      "run": "pytest -m delete_comments",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "faceted_search",
+      "setup": "",
+      "run": "pytest -m faceted_search",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "facets",
+      "setup": "",
+      "run": "pytest -m facets",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "get_comments",
+      "setup": "",
+      "run": "pytest -m get_comments",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "paging",
+      "setup": "",
+      "run": "pytest -m paging",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "projection",
+      "setup": "",
+      "run": "pytest -m projection",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "text_and_subfield_search",
+      "setup": "",
+      "run": "pytest -m text_and_subfield_search",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "user_management",
+      "setup": "",
+      "run": "pytest -m user_management",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "user_preferences ",
+      "setup": "",
+      "run": "pytest -m user_preferences",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    }
+  ]
+}
