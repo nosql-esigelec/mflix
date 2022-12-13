@@ -1,9 +1,9 @@
 name: GitHub Classroom Workflow
 
-on:
-  # Triggers the workflow on push or pull request events but only for the "dev" branch
-  push:
-    branches: [ "update-mflix" ]
+on: [push]
+#  # Triggers the workflow on push or pull request events but only for the "dev" branch
+#  push:
+#    branches: [ "update-mflix" ]
 
 permissions:
   checks: write
