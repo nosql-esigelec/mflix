@@ -164,7 +164,7 @@ def get_movies(filters, page, movies_per_page):
     # Use the cursor to only return the movies that belong on the current page.
     movies = cursor.limit(movies_per_page)
 
-    return (list(movies), total_num_movies)
+    return list(movies), total_num_movies
 
 
 """
@@ -294,7 +294,7 @@ def update_prefs(email, prefs):
     Given a user's email and a dictionary of preferences, update that user's
     preferences.
     """
-    prefs = {} if prefs is None else prefs
+    # Manage the case where prefs is None
     try:
         # TODO: User preferences
         # Use the data in "prefs" to update the user's preferences.
@@ -343,7 +343,7 @@ def get_movie(id):
 
     # TODO: Error Handling
     # If an invalid ID is passed to `get_movie`, it should return None.
-    except (StopIteration) as _:
+    except StopIteration as _:
 
         """
         Ticket: Error Handling
@@ -523,7 +523,7 @@ def get_movies_faceted(filters, page, movies_per_page):
         movies = list(db.movies.aggregate(pipeline, allowDiskUse=True))[0]
         count = list(db.movies.aggregate(counting, allowDiskUse=True))[
             0].get("count")
-        return (movies, count)
+        return movies, count
     except OperationFailure:
         raise OperationFailure(
             "Results too large to sort, be more restrictive in filter")
@@ -545,3 +545,20 @@ def make_admin(email):
     Flags the supplied user an an admin
     """
     db.users.update_one({"email": email}, {"$set": {"isAdmin": True}})
+
+
+def get_configuration():
+    """
+    Returns the following information configured for this client:
+
+    - max connection pool size
+    - write concern
+    - database user role
+    """
+
+    try:
+        role_info = db.command({'connectionStatus': 1}).get('authInfo').get(
+            'authenticatedUserRoles')[0]
+        return db.client.max_pool_size, db.client.write_concern, role_info
+    except IndexError:
+        return db.client.max_pool_size, db.client.write_concern, {}

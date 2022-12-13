@@ -1,4 +1,5 @@
 # MFlix: implement features to a movie platform
+[![to complete](https://img.shields.io/badge/TP_2_:_MongoDB_avec_Python-2ea44f)](https://github.com/nosql-esigelec/inge3a_23/tree/main/tp_2)
 
 In this TP we'll have to write python code to implement some features to our MFlix application. 
 
