@@ -33,15 +33,3 @@ def test_supports_paging_by_genre(client):
     assert movies2[0].get('title') == 'Only the Dead'
 
 
-@pytest.mark.paging
-def test_supports_paging_by_text(client):
-    filter = {'text': 'bank robbery'}
-    (movies0, results0) = get_movies(filter, 0, 20)
-    assert len(list(movies0)) == 20
-    assert results0 == 475
-    assert movies0[0].get('title') == 'The Bank'
-    last_page = int(475 / 20)
-    (movies2, results2) = get_movies(filter, last_page, 20)
-    assert len(list(movies2)) == 15
-    assert (movies2[0].get('title') == "Skippy" or movies2[0].get('title') == \
-           "Operation 'Y' & Other Shurik's Adventures")

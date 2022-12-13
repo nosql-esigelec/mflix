@@ -490,21 +490,21 @@ def get_movies_faceted(filters, page, movies_per_page):
         "$facet": {
             "runtime": [{
                 "$bucket": {
-                    "groupBy": "$runtime",
-                    "boundaries": [0, 60, 90, 120, 180],
-                    "default": "other",
+                    "groupBy": "",
+                    "boundaries": [],
+                    "default": "",
                     "output": {
-                        "count": {"$sum": 1}
+                        "count": {}
                     }
                 }
             }],
             "rating": [{
                 "$bucket": {
-                    "groupBy": "$metacritic",
-                    "boundaries": [0, 50, 70, 90, 100],
-                    "default": "other",
+                    "groupBy": "",
+                    "boundaries": [],
+                    "default": "",
                     "output": {
-                        "count": {"$sum": 1}
+                        "count": {}
                     }
                 }
             }],
