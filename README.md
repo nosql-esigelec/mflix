@@ -299,7 +299,7 @@ pytest -m delete_comments
 After passing the relevant tests, what is the validation code for **Delete Comments**?
 
 ---
-# Ticket #11: Faceted Search
+# Ticket #11: User Report:
 [![to complete](https://img.shields.io/badge/to_complete-2ea44f)](https://)
 ### **User Story**
 
@@ -334,8 +334,8 @@ After passing the relevant tests, what is the validation code for **User Report
 
 ---
 ###
-# Homework:
-
+# Ticket #12: Faceted Search
+[![to complete](https://img.shields.io/badge/to_complete-2ea44f)](https://)
 ### **User Story**
 
 "As a user, I want to be able to filter cast search results by one facet, **metacritic** rating."

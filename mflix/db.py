@@ -424,7 +424,33 @@ def delete_comment(comment_id, user_email):
 
 
 """
-Ticket #11: Faceted Search
+Ticket #11: User Report
+
+Construct a pipeline to find the users who comment the most on MFlix, sort
+by the number of comments, and then only return the 20 documents with the
+highest values.
+
+No field projection necessary.
+"""
+
+
+def most_active_commenters():
+    """
+    Returns a list of the top 20 most frequent commenters.
+    """
+    # TODO: User Report
+    # Return the 20 users who have commented the most on MFlix.
+    pipeline = []
+
+    rc = db.comments.read_concern
+    # you may want to change this read concern!
+    comments = db.comments.with_options(read_concern=rc)
+    result = comments.aggregate(pipeline)
+    return list(result)
+
+
+"""
+Ticket #12: Faceted Search
 
 Please append the skip_stage, limit_stage, and facet_stage to the pipeline
 (in that order).
