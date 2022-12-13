@@ -24,5 +24,3 @@ jobs:
               pip install pytest 
               pip install -r requirements.txt
       - uses: education/autograding@v1
-
-
